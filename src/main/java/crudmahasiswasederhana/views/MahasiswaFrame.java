@@ -206,6 +206,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        mahasiswaTable.setAutoscrolls(false);
         jScrollPane1.setViewportView(mahasiswaTable);
 
         nimValidasiLabel.setForeground(new java.awt.Color(255, 51, 51));
@@ -245,7 +246,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                             .addComponent(nimText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(namaText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,7 +262,7 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(namaText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(namaLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(namaValidasiLabel)
                     .addComponent(ubahBtn))
@@ -273,9 +274,9 @@ public class MahasiswaFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(alamatValidasiLabel)
                     .addComponent(hapusBtn))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -292,38 +293,6 @@ public class MahasiswaFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
-        try {
-            // TODO add your handling code here:
-            Mahasiswa mhs = new Mahasiswa();
-            validasiInput(mhs);
-//            mhs.setNim(nimText.getText());
-//            mhs.setNama(namaText.getText());
-//            mhs.setAlamat(alamatText.getText());
-            mhsServis.insert(mhs);
-            this.statusAwal();
-            JOptionPane.showMessageDialog(this, "data tersimpan");
-        } catch (SQLException ex) {
-            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_tambahBtnActionPerformed
-
-    private void ubahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahBtnActionPerformed
-        try {
-            // TODO add your handling code here:
-            Mahasiswa mhs = new Mahasiswa();
-            validasiInput(mhs);
-//            mhs.setNim(nimText.getText());
-//            mhs.setNama(namaText.getText());
-//            mhs.setAlamat(alamatText.getText());
-            mhsServis.update(mhs);
-            this.statusAwal();
-            JOptionPane.showMessageDialog(this, "Data berhasil diubah");
-        } catch (SQLException ex) {
-            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ubahBtnActionPerformed
-
     private void hapusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBtnActionPerformed
         try {
             // TODO add your handling code here:
@@ -335,6 +304,38 @@ public class MahasiswaFrame extends javax.swing.JFrame {
             Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_hapusBtnActionPerformed
+
+    private void ubahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ubahBtnActionPerformed
+        try {
+            // TODO add your handling code here:
+            Mahasiswa mhs = new Mahasiswa();
+            validasiInput(mhs);
+            //            mhs.setNim(nimText.getText());
+            //            mhs.setNama(namaText.getText());
+            //            mhs.setAlamat(alamatText.getText());
+            mhsServis.update(mhs);
+            this.statusAwal();
+            JOptionPane.showMessageDialog(this, "Data berhasil diubah");
+        } catch (SQLException ex) {
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ubahBtnActionPerformed
+
+    private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
+        try {
+            // TODO add your handling code here:
+            Mahasiswa mhs = new Mahasiswa();
+            validasiInput(mhs);
+            //            mhs.setNim(nimText.getText());
+            //            mhs.setNama(namaText.getText());
+            //            mhs.setAlamat(alamatText.getText());
+            mhsServis.insert(mhs);
+            this.statusAwal();
+            JOptionPane.showMessageDialog(this, "data tersimpan");
+        } catch (SQLException ex) {
+            Logger.getLogger(MahasiswaFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_tambahBtnActionPerformed
 
     private void nimTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimTextActionPerformed
         // TODO add your handling code here:
